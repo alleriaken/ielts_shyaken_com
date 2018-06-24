@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"ielts_study_backend/controllers"
+	"ielts_study_backend/controllers/api"
 )
 
 type RouteElement struct {
@@ -23,6 +24,7 @@ func routeApi()  {
 
 	routes := map[string]RouteElement{
 		"/" : Route(controllers.Index, []string{}),
+		"/api" : Route(api.Index, []string{}),
 
 		// Routes for word apis
 		"/api/word" : Route(word.HandleGet, []string{}),
